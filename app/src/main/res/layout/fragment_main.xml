@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@android:style/Theme.NoTitleBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity$PlaceholderFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#DC143C">
+
+        <RadioButton
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#FFFFFF"
+            android:button="@null"
+            android:drawableLeft="@drawable/btn_search"
+            android:hint="搜索商户或者商品名称" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#DCDCDC" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_res"
+                        android:text="餐饮" />
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_supermarket"
+                        android:text="超市购" />
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_fuirt"
+                        android:text="水果生鲜" />
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_afternoon_tea"
+                        android:text="下午茶" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_money"
+                        android:text="土豪特供" />
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_new_shop"
+                        android:text="新店" />
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_baidu_distribution"
+                        android:text="百度配送" />
+
+                    <Button
+                        android:background="#FFFFFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/btn_main_distribution_medicine"
+                        android:text="网上送药" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#DCDCDC" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0FFFF"
+                android:text="商家分类"
+                android:textSize="20sp" />
+
+            <com.jniu.baidutakeoutui.view.NoScrollListView
+                android:id="@+id/lv_business_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></com.jniu.baidutakeoutui.view.NoScrollListView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

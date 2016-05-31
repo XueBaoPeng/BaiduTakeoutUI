@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_shop_img"
+        android:layout_width="100dp"
+        android:layout_height="75dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:id="@+id/tv_shop_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="店名"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_shop_mark_card"
+                    style="@style/ShopMarkTextView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="证" />
+
+                <TextView
+                    android:id="@+id/tv_shop_mark_coupons"
+                    style="@style/ShopMarkTextView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="券" />
+
+                <TextView
+                    android:id="@+id/tv_shop_mark_ticket"
+                    style="@style/ShopMarkTextView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="票" />
+
+                <TextView
+                    android:id="@+id/tv_shop_mark_pay"
+                    style="@style/ShopMarkTextView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="付" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+            <RatingBar
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                style="@style/roomRatingBar"
+                android:rating="3.5"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:id="@+id/tv_shop_sales_volume"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/tv_takeout_info"/>
+    </LinearLayout>
+
+</LinearLayout>
