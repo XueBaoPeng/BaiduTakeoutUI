@@ -50,34 +50,54 @@ public class ShopInfoAdapter extends ArrayAdapter<ShopInfo> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = layoutInflater.inflate(R.layout.shop_cell, null);
+        ViewHolder viewHolder=null;
         ShopInfo shopInfo = shopInfoList.get(position);
-        ImageView ivShopImg = (ImageView) view.findViewById(R.id.iv_shop_img);
-        TextView tvShopName = (TextView) view.findViewById(R.id.tv_shop_name);
-        TextView tvShopMarkCard = (TextView) view.findViewById(R.id.tv_shop_mark_card);
-        TextView tvShopMarkPay = (TextView) view.findViewById(R.id.tv_shop_mark_pay);
-        TextView tvShopMarkCoupons = (TextView) view.findViewById(R.id.tv_shop_mark_coupons);
-        TextView tvShopMarkTicket = (TextView) view.findViewById(R.id.tv_shop_mark_ticket);
-        RatingBar ratingBar = (RatingBar) view.findViewById(R.id.tv_rating);
-        TextView tvSaleVolume = (TextView) view.findViewById(R.id.tv_shop_sales_volume);
-        TextView tvTakeOutInfo = (TextView) view.findViewById(R.id.tv_takeout_info);
+        if(convertView==null){
+            convertView=layoutInflater.inflate(R.layout.shop_cell, null);
+            viewHolder=new ViewHolder();
+            viewHolder.ivShopImg = (ImageView) convertView.findViewById(R.id.iv_shop_img);
+            viewHolder. tvShopName = (TextView) convertView.findViewById(R.id.tv_shop_name);
+            viewHolder. tvShopMarkCard = (TextView) convertView.findViewById(R.id.tv_shop_mark_card);
+            viewHolder. tvShopMarkPay = (TextView) convertView.findViewById(R.id.tv_shop_mark_pay);
+            viewHolder. tvShopMarkCoupons = (TextView) convertView.findViewById(R.id.tv_shop_mark_coupons);
+            viewHolder. tvShopMarkTicket = (TextView) convertView.findViewById(R.id.tv_shop_mark_ticket);
+            viewHolder. ratingBar = (RatingBar) convertView.findViewById(R.id.tv_rating);
+            viewHolder. tvSaleVolume = (TextView) convertView.findViewById(R.id.tv_shop_sales_volume);
+            viewHolder. tvTakeOutInfo = (TextView) convertView.findViewById(R.id.tv_takeout_info);
+            convertView.setTag(viewHolder);
+        }else{
+            viewHolder= (ViewHolder) convertView.getTag();
+        }
         if(shopInfo.isCard()){
-            tvShopMarkCard.setVisibility(view.VISIBLE);
+            viewHolder.tvShopMarkCard.setVisibility(convertView.VISIBLE);
         }
         if(shopInfo.isCoupons()){
-            tvShopMarkCoupons.setVisibility(View.VISIBLE);
+            viewHolder.tvShopMarkCoupons.setVisibility(View.VISIBLE);
         }
         if(shopInfo.isPay()){
-            tvShopMarkPay.setVisibility(View.VISIBLE);
+            viewHolder.tvShopMarkPay.setVisibility(View.VISIBLE);
         }
         if(shopInfo.isTicket()){
-            tvShopMarkTicket.setVisibility(View.VISIBLE);
+            viewHolder. tvShopMarkTicket.setVisibility(View.VISIBLE);
         }
-        ivShopImg.setImageResource(shopInfo.getShopImgResourceId());
-        tvShopName.setText(shopInfo.getShopName());
-        ratingBar.setRating(shopInfo.getShopRating());
-        tvSaleVolume.setText("月销量"+shopInfo.getSalesVolume()+"份");
-        tvTakeOutInfo.setText("起送¥"+shopInfo.getPlayPrice()+"| 配送 ¥ "+shopInfo.getDistribution()+" | 平均"+shopInfo.getDistributionTime()+"分钟");
-        return view;
+        viewHolder.ivShopImg.setImageResource(shopInfo.getShopImgResourceId());
+        viewHolder.tvShopName.setText(shopInfo.getShopName());
+        viewHolder.ratingBar.setRating(shopInfo.getShopRating());
+        viewHolder.tvSaleVolume.setText("月销量"+shopInfo.getSalesVolume()+"份");
+        viewHolder.tvTakeOutInfo.setText("起送¥"+shopInfo.getPlayPrice()+"| 配送 ¥ "+shopInfo.getDistribution()+" | 平均"+shopInfo.getDistributionTime()+"分钟");
+        return convertView;
+    }
+
+    class ViewHolder {
+        ImageView ivShopImg;
+        TextView tvShopName;
+        TextView tvShopMarkCard;
+        TextView tvShopMarkPay;
+        TextView tvShopMarkCoupons;
+        TextView tvShopMarkTicket;
+        TextView tvSaleVolume;
+        TextView tvTakeOutInfo;
+        RatingBar ratingBar;
+
     }
 }

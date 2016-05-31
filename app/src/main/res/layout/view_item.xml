@@ -2,16 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" >
+              android:layout_height="100dp" >
     <ImageView
         android:id="@+id/item_icon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:src="@drawable/mypage_list_icon_refund"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"/>
 
     <TextView
         android:id="@+id/item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:text="dsds"
+        android:textSize="15sp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/item_icon"
+        android:layout_marginLeft="8dp"/>
+
 
 </RelativeLayout>

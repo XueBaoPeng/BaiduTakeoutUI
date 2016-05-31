@@ -131,9 +131,9 @@
             android:background="#FFFFFF"
             android:textColor="#FF0000"
             android:drawableLeft="@drawable/mypage_list_icon_call"
-            android:text="客服 400-011-7777"/>-->
+            android:text="客服 400-011-7777"/>
 
-
+-->
     </LinearLayout>
 
 </LinearLayout>
